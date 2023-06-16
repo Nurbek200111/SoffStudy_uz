@@ -46,7 +46,6 @@ const Portfolio = () => {
                                         experience in the field of Digital Marketing,<br className="d-none d-lg-block" />I am
                                         confident to bring you many outstanding values.</p>
                                 </div>
-
                                 <div className="box-features bg-gray-850 border-gray-800">
                                     <div className="row">
                                         <div className="col-lg-4 col-md-6 mb-50 wow animate__animated animate__fadeIn" data-wow-delay="0s"><span className="item-icon bg-gray-950 icon-motion" />
@@ -81,7 +80,6 @@ const Portfolio = () => {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="text-center mt-70 mb-50">
                                     <h2 className="color-linear d-inline-block mb-10 wow animate__animated animate__fadeInUp">
                                         Testimonials</h2>

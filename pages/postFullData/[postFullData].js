@@ -36,7 +36,7 @@ const PostFullData1 = () => {
             .then(ress => {
                 setProjects1(ress.data[0].data)
             })
-    }, [])
+    }, [postFullData])
 
 
 

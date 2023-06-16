@@ -1,38 +1,27 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 SwiperCore.use([Autoplay, Navigation]);
 const Brand = () => {
 
-    // const data = [
-    //     {
-    //         img: "agon.svg",
-    //     },
-    //     {
-    //         img: "mon.svg",
-    //     },
-    //     {
-    //         img: "fig.svg",
-    //     },
-    //     {
-    //         img: "flow.svg",
-    //     },
-    //     {
-    //         img: "evara.svg",
-    //     },
-    // ];
-
-    const [data, setData] =  useState([])
-
-    useEffect(()=> {
-        axios.get("http://199.192.23.189/swagger/partners/")
-        .then(ress => {
-            setData(ress.data);
-        })
-
-    },[])
+    const data = [
+        {
+            img: "agon.svg",
+        },
+        {
+            img: "mon.svg",
+        },
+        {
+            img: "fig.svg",
+        },
+        {
+            img: "flow.svg",
+        },
+        {
+            img: "evara.svg",
+        },
+    ];
 
 
     return (
@@ -78,11 +67,8 @@ const Brand = () => {
                 className="swiper-wrapper pt-5"
             >
                 {data.map((item, i) => (
-                    <SwiperSlide className="swiper-slide" key={i}>
-                        <a href="#"><img src={`${item.img_url}`} alt={`${item.name}`} style={{
-                            height: 100,
-                            borderRadius: 10
-                        } } /></a>
+                    <SwiperSlide className="swiper-slide"  key={i}>
+                        <a href="#"><img src={`assets/imgs/page/homepage3/${item.img}`} alt="Genz" /></a>
                     </SwiperSlide>
                 ))}
             </Swiper>

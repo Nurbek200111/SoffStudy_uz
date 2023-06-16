@@ -2,29 +2,9 @@ import Link from "next/link";
 import Head from 'next/head';
 import Layout from "../components/layout/Layout";
 import data from "../util/healthy";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-
 
 export default function Home() {
-
-    const [categories, setCategories] = useState([])
-    const [categories1, setCategories1] = useState([])
-    useEffect(() => {
-        axios.get("http://192.168.1.24:8000/swagger/categoriya/")
-            .then(ress => {
-                setCategories(ress.data);
-                setCategories1(ress.data[0].data);
-            })
-
-    }, [])
-
-
-
     return (
-
-
         <>
             <Head>
                 <title>Genx - Blog archive 2</title>
@@ -86,7 +66,7 @@ export default function Home() {
                                             </div>
                                             <div className="box-list-posts mt-30">
                                                 {data.slice(0, 5).map((item, i) => (
-                                                    <div className="card-list-posts wow animate__animated animate__fadeIn" key={i}>
+                                                    <div className="card-list-posts wow animate__animated animate__fadeIn"  key={i}>
                                                         <div className="card-image hover-up"><Link href={`/blog/${item.id}`} ><img src={`/assets/imgs/page/healthy/${item.img}`} alt="Genz" /></Link></div>
                                                         <div className="card-info"><Link className="btn btn-tag bg-gray-800 hover-up" href="/blog-archive">{item.category}</Link><Link href={`/blog/${item.id}`} >
                                                             <h4 className="mt-15 mb-20 color-white">{item.title}</h4>
@@ -115,44 +95,54 @@ export default function Home() {
                                                 </ul>
                                             </nav>
                                         </div>
-
-
-                                        {/* Categories */}
-
                                         <div className="col-lg-4">
                                             <div className="sidebar">
                                                 <div className="box-sidebar bg-gray-850 border-gray-800">
-                                                    {
-                                                        categories.map(data => {
-                                                            return (
-                                                                <>
-                                                                    <div className="head-sidebar">
-                                                                        <h5 className="line-bottom">{data.title}</h5>
-                                                                    </div>
-                                                                </>
-                                                            )
-                                                        })
-                                                    }
-
+                                                    <div className="head-sidebar">
+                                                        <h5 className="line-bottom">Categories</h5>
+                                                    </div>
                                                     <div className="content-sidebar">
                                                         <div className="list-cats">
-                                                            {
-                                                                categories1.map((item)=> {
-                                                                    return (
-                                                                        <>
-                                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
-                                                                                <div className="cat-left">
-                                                                                    <div className="image-cat"><Link href="/categories/[categoriesID]"><img src={item.img_url} alt="Genz" /></Link></div>
-                                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href={`/categories/${item.id}`}>{item.name}</Link></div>
-                                                                                </div>
-                                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive">0
-                                                                                    posts</Link></div>
-                                                                            </div>
-
-                                                                        </>
-                                                                    )
-                                                                })
-                                                            }
+                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
+                                                                <div className="cat-left">
+                                                                    <div className="image-cat"><Link href="/blog-archive"><img src="assets/imgs/page/healthy/cat1.png" alt="Genz" /></Link></div>
+                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href="/blog-archive">Travel Tips</Link></div>
+                                                                </div>
+                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive">36
+                                                                    posts</Link></div>
+                                                            </div>
+                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
+                                                                <div className="cat-left">
+                                                                    <div className="image-cat"><Link href="/blog-archive-2"><img src="assets/imgs/page/healthy/cat2.png" alt="Genz" /></Link></div>
+                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href="/blog-archive-2">Technology</Link></div>
+                                                                </div>
+                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive-2">14
+                                                                    posts</Link></div>
+                                                            </div>
+                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
+                                                                <div className="cat-left">
+                                                                    <div className="image-cat"><Link href="/blog-archive-3"><img src="assets/imgs/page/healthy/cat3.png" alt="Genz" /></Link></div>
+                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href="/blog-archive-3">Business</Link></div>
+                                                                </div>
+                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive-3">87
+                                                                    posts</Link></div>
+                                                            </div>
+                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
+                                                                <div className="cat-left">
+                                                                    <div className="image-cat"><Link href="/blog-archive-4"><img src="assets/imgs/page/healthy/cat4.png" alt="Genz" /></Link></div>
+                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href="/blog-archive-4">Food</Link></div>
+                                                                </div>
+                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive-4">125
+                                                                    posts</Link></div>
+                                                            </div>
+                                                            <div className="item-cats border-gray-800 wow animate__animated animate__fadeIn">
+                                                                <div className="cat-left">
+                                                                    <div className="image-cat"><Link href="/blog-archive-5"><img src="assets/imgs/page/healthy/cat5.png" alt="Genz" /></Link></div>
+                                                                    <div className="info-cat"><Link className="color-gray-500 text-xl" href="/blog-archive-5">Lifestyle</Link></div>
+                                                                </div>
+                                                                <div className="cat-right"><Link className="btn btn-small text-sm color-gray-500 bg-gray-800" href="/blog-archive-5">6
+                                                                    posts</Link></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -288,9 +278,6 @@ export default function Home() {
                                                 </div>
                                             </div>
                                         </div>
-
-
-
                                     </div>
                                 </div>
                                 <div className="mb-10" />

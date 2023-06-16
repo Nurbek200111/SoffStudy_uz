@@ -4,52 +4,13 @@ import Layout from "../components/layout/Layout";
 import HotTopic from "../components/slider/HotTopic";
 import Typewriter from 'typewriter-effect';
 
-import Brand from "../components/slider/Brand";
-
 import data from "../util/advantages";
 import courses from "../util/courses";
 import useLead from "/hooks/UseLead";
-import { useEffect, useState } from "react";
-import axios, { Axios } from "axios";
-
-import Courses from '/repositories/CoursesRepository';
-import Advantages1 from '/repositories/AdvantagesRepository';
-
 
 export default function Home() {
     const { nameRef, phoneRef, leadStatus, handleSubmit } = useLead()
-
-    const [courses1, setCourses1] = useState([])
-    const [courses2, setCourses2] = useState([])
-
-    const [partners2, setPartners] = useState([])
-    const [adventages1, setAdventages1] = useState([])
-    const [adventages2, setAdventages2] = useState([])
-
-
-    useEffect(() => {
-
-        axios.get("http://199.192.23.189/swagger/advantages/")
-            .then(ress => {
-                setAdventages1(ress.data)
-                setAdventages2(ress.data[0].data)
-            })
-
-
-
-
-        axios.get("http://199.192.23.189/swagger/courses/")
-            .then(data => {
-                setCourses1(data.data)
-                setCourses2(data.data[0].data)
-            })
-
-    }, [])
-
-
-
-
-
+    
     return (
         <>
             <Head>
@@ -72,9 +33,9 @@ export default function Home() {
                                                 {/* <Link className="typewrite color-linear" href="#" data-period={3000} data-type="[ &quot;Brian Clark&quot;, &quot;Designer&quot;, &quot;Creator&quot; ]" /> */}
                                             </h2>
                                             <h2 className="color-gray-50 wow animate__animated animate__fadeInUp">
-                                                <Typewriter
+                                            <Typewriter
                                                     options={{
-                                                        wrapperClassName: " color-linear",
+                                                        wrapperClassName:" color-linear",
                                                         strings: ['"Soff Study"da', 'Tajribalilardan', 'Real loyihalar bilan'],
                                                         autoStart: true,
                                                         loop: true,
@@ -92,9 +53,9 @@ export default function Home() {
                                                 </div>
                                             </div> */}
                                             <div className="box-subscriber mt-40 mb-50 wow animate__animated animate__fadeInUp">
-
+                                                
                                                 {
-                                                    (leadStatus) &&
+                                                    (leadStatus) && 
                                                     <span className="text-sm-bold text-success color-gray-600 wow animate__animated animate__fadeInUp">
                                                         <i className="fi fi-rr-paper-plane"> </i> So'rovingiz qabul qilindi, biz siz bilan tez orada bog'lanamiz.
                                                     </span>
@@ -104,7 +65,7 @@ export default function Home() {
                                                     <form onSubmit={handleSubmit}>
                                                         <div className="d-flex justify-content-between mb-3 mt-2">
                                                             <input ref={nameRef} required className="input-sybscriber" type="text" placeholder="Ismingiz" />
-                                                            <input ref={phoneRef} maxLength='9' minLength='9' required className="input-sybscriber" type="text" placeholder="Telefoningiz" />
+                                                            <input ref={phoneRef}  maxLength='9' minLength='9' required className="input-sybscriber" type="text" placeholder="Telefoningiz" />
                                                         </div>
                                                         <button type="submit" className="btn btn-linear w-100">Ma'lumot olish<i className="fi-rr-arrow-small-right" /></button>
                                                     </form>
@@ -127,68 +88,61 @@ export default function Home() {
                                 </div>
                                 <div className="mb-70">
                                     <div className="box-topics border-gray-800 bg-gray-850 ">
-                                        <h6 className="color-gray-50 wow animate__animated animate__fadeInUp">
+                                            <h6 className="color-gray-50 wow animate__animated animate__fadeInUp">
                                             <Typewriter
-                                                options={{
-                                                    wrapperClassName: " color-linear",
-                                                    strings: [" Maqsad, aniq! O'quvchilarning natijasiga qaratilgan. O'z ustida ishlab sabr qila oladiganlargina \"Soff Study\" bilan birgalikda o'z maqsadiga erishadi. Bunga biz ishonamiz va tajribamizdan ham o'tkazdik!"],
-                                                    autoStart: true,
-                                                    loop: false,
-                                                    delay: 40,
-                                                    deleteSpeed: Infinity
-                                                }}
-                                            />
-                                        </h6>
+                                                    options={{
+                                                        wrapperClassName:" color-linear",
+                                                        strings: [" Maqsad, aniq! O'quvchilarning natijasiga qaratilgan. O'z ustida ishlab sabr qila oladiganlargina \"Soff Study\" bilan birgalikda o'z maqsadiga erishadi. Bunga biz ishonamiz va tajribamizdan ham o'tkazdik!"],
+                                                        autoStart: true,
+                                                        loop: false,
+                                                        delay: 40,
+                                                        deleteSpeed: Infinity
+                                                    }}
+                                                />
+                                            </h6>
                                         {/* <HotTopic /> */}
                                     </div>
                                 </div>
-
-
-                                {/* adventages */}
-                                {
-                                    adventages1.map(item => {
-                                        return (
-                                            <>
-                                                <h2 className="color-linear d-inline-block mb-10 wow animate__animated animate__fadeInUp">
-                                                    {item.title}
-                                                </h2>
-                                                <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">
-                                                    {item.description}
-                                                </p>
-
-                                            </>
-                                        )
-                                    })
-                                }
-
-
+                                <h2 className="color-linear d-inline-block mb-10 wow animate__animated animate__fadeInUp">
+                                    Qanday afzalliklarimiz bor?
+                                </h2>
+                                <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">
+                                    Avalam bor biz kurslarni shunchaki o'rgatmaymiz. Aniq dasturchi bo'lishingi va muamolarni o'z olgan bilimlaringiz bilan yecha oladigan va IT(Ayti) bozorida o'z o'rnini topa oladigan inson bo'lishingizga hissa qo'shamiz.
+                                </p>
                                 <div className="row mt-70 soff__card">
                                     {
-                                        adventages2.map((item, index) => {
+                                        data.map((item, index) => {
                                             return (
                                                 <div key={index} className="col-lg-4 wow animate__animated animate__fadeIn">
                                                     <div className="card-blog-1 hover-up">
                                                         <div className="card-image mb-20">
-                                                            {/* <Link className="post-type" href="/blog-archive" /> */}
-                                                            <Link href={`/afzalliklar/${item.name}`}>
-                                                                <img src={item.img_url} alt={item.img_url} />
+                                                            <Link className="post-type" href="/blog-archive" />
+                                                            <Link  href={`/afzalliklar/${item.name}`}>
+                                                                <img src={item.img_src} alt={item.img_src} />
                                                             </Link>
                                                         </div>
                                                         <div className="card-info">
-                                                            <Link href={`/afzalliklar/${item.name}`}>
-                                                                <h4 className="color-white mt-20">
+                                                            <Link  href={`/afzalliklar/${item.name}`}>
+                                                                <h4 className="color-white mt-20"> 
                                                                     {item.name}
                                                                 </h4>
                                                             </Link>
                                                             <div className="row align-items-center mt-25">
                                                                 <div className="col-7">
-                                                                    <Link key={index} className="color-gray-700 text-sm" href="">#{item.key_words} </Link>
+                                                                    {
+                                                                        item.keywords.map(keyword => { 
+                                                                            return (
+                                                                                <Link key={keyword} className="color-gray-700 text-sm" href="">#{keyword} </Link>
+                                                                            ) 
+                                                                        })
+                                                                    }
+                                                                    
                                                                 </div>
                                                                 <div className="col-5 text-end">
                                                                     <Link className="readmore color-gray-500 text-sm" href={`/afzalliklar/${item.name}`}>
                                                                         <span>Batal</span>
                                                                     </Link>
-                                                                </div>
+                                                                    </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -197,54 +151,27 @@ export default function Home() {
                                         })
                                     }
                                 </div>
-
-                                {/* courses */}
-                                {
-                                    courses1.map(item => {
-                                        return (
-                                            <>
-                                                <h2 className="color-linear d-inline-block mt-20 mb-10 wow animate__animated animate__fadeInUp">
-                                                    {item.title}
-                                                </h2>
-
-                                                <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">
-                                                    {item.description}
-                                                </p>
-                                            </>
-                                        )
-                                    })
-                                }
-
-
+                                <h2 className="color-linear d-inline-block mt-20 mb-10 wow animate__animated animate__fadeInUp">
+                                    Kurslarimiz    
+                                </h2>
+                                <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">
+                                    30% nazariy, 70% amaliy darslar moslashtirilgan kurslarimiz
+                                </p>
                                 <div className="row mt-70 mb-50">
                                     {
-                                        courses2.map((item) => {
+                                        courses.map((item, index) => {
                                             return (
-                                                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
-                                                    <div className="card-style-2 hover-up hover-neon wow animate__animated animate__fadeIn" data-wow-delay="0s">
-                                                        <div className="card-image"><Link href="/blog-archive"><img src={item.img_url} alt="Genz" /></Link></div>
-                                                        <div className="card-info"><Link className="color-gray-500" href="/blog-archive">{item.name}</Link>
-                                                        </div>
+                                                <div key={index} className="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+                                                <div className="card-style-2 hover-up hover-neon wow animate__animated animate__fadeIn" data-wow-delay="0s">
+                                                    <div className="card-image"><Link href="/blog-archive"><img src="assets/imgs/page/homepage1/tag1.png" alt="Genz" /></Link></div>
+                                                    <div className="card-info"><Link className="color-gray-500" href="/blog-archive">{item.title}</Link>
                                                     </div>
                                                 </div>
+                                            </div>
                                             )
                                         })
                                     }
                                 </div>
-
-
-                                {/* partners */}
-                                <h2 className="color-linear d-inline-block mt-20 mb-10 wow animate__animated animate__fadeInUp">
-                                                   Hamkorlarimiz
-                                                </h2>
-
-                                                <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">
-                                                    Bizni qo'lab-quvvatlashda tavom eting!!!
-                                                </p>
-                                <div className="row mt-70 mb-50">
-                                    <Brand />
-                                </div>
-
                                 {/* <div className="row mt-70">
                                     <div className="col-lg-8">
                                         <h2 className="color-linear d-inline-block mb-10">Recent posts</h2>

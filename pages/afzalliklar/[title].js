@@ -10,7 +10,7 @@ const AdvantageDetail = () => {
 
     const [blogPost, setBlogPost] = useState(null);
 
-    const  {title}  = Router.query;
+    const { title } = Router.query;
 
     useEffect(() => {
         setBlogPost(data.find((data) => data.name == title));

@@ -23,12 +23,12 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                     <div className="main-header">
                         <div className="header-logo">
                             <Link className="d-flex" href="/">
-                                <img className="logo-night" alt="GenZ" src="/assets/imgs/page/logo/Soff Study white logo.png" />
-                                <img className="d-none logo-day" alt="GenZ" src="/assets/imgs/page/logo/Soff Study dark logo.png" />
+                                <img className="logo-night" alt="GenZ" src="/assets/imgs/page/logo/Nurbek1.svg" />
+                                <img className="d-none logo-day" alt="GenZ" src="/assets/imgs/page/logo/Nurbek1.svg" />
                             </Link>
                         </div>
                         <div className="header-nav">
-                            { <nav className="nav-main-menu d-none d-xl-block">
+                            <nav className="nav-main-menu d-none d-xl-block">
                                 <ul className="main-menu">
                                     <li className="has-children"><Link className="active" href="/">Home</Link>
                                         <ul className="sub-menu two-col">
@@ -45,7 +45,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                             <li><Link className="color-gray-500" href="/portfolio-details">Portfolio Details</Link></li>
                                         </ul>
                                     </li>
-                                    {/* <li className="has-children"><Link className="color-gray-500" href="#">Category</Link>
+                                    <li className="has-children"><Link className="color-gray-500" href="#">Category</Link>
                                         <ul className="sub-menu two-col">
                                             <li><Link className="color-gray-500" href="/blog-archive">Blog Category 1</Link></li>
                                             <li><Link className="color-gray-500" href="/blog-archive-2">Blog Category 2</Link></li>
@@ -53,14 +53,14 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                             <li><Link className="color-gray-500" href="/blog-archive-4">Blog Category 4</Link></li>
                                             <li><Link className="color-gray-500" href="/blog-archive-5">Blog Category 5</Link></li>
                                         </ul>
-                                    </li> */}
-                                    {/* <li className="has-children"><Link className="color-gray-500" href="#">Single Post</Link>
+                                    </li>
+                                    <li className="has-children"><Link className="color-gray-500" href="#">Single Post</Link>
                                         <ul className="sub-menu two-col">
                                             <li><Link className="color-gray-500" href="/single-sidebar">Blog Single 1</Link></li>
                                             <li><Link className="color-gray-500" href="/single-no-sidebar">Blog Single 2</Link></li>
                                             <li><Link className="color-gray-500" href="/single-center">Blog Single 3</Link></li>
                                         </ul>
-                                    </li> */}
+                                    </li>
                                     <li className="has-children"><Link className="color-gray-500" href="#">Pages</Link>
                                         <ul className="sub-menu two-col">
                                             <li><Link className="color-gray-500" href="/page-about">About</Link></li>
@@ -73,10 +73,9 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                         </ul>
                                     </li>
                                     <li><Link className="color-gray-500" href="/page-contact">Contact</Link></li>
-                                    <li><Link className="color-gray-500" href="/page-gallery">Gallery</Link></li>
-                                    <li><Link className="color-gray-500" href="/page-categories">Categories</Link></li>
+                                    <li><Link className="color-gray-500" href="/yonalishlar">Bizning yonalishlar</Link></li>
                                 </ul>
-                            </nav> }
+                            </nav>
                             <div className={`burger-icon burger-icon-white ${openClass && "burger-close"}`}
                                 onClick={() => { handleOpen(); handleRemove() }}>
                                 <span className="burger-icon-top" />

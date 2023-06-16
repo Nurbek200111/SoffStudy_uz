@@ -13,10 +13,10 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-lg-4 mb-30">
                                 <Link className="wow animate__animated animate__fadeInUp" href="/">
-                                <img className="logo-night" alt="GenZ" src="/assets/imgs/page/logo/Soff Study white logo.png" />
-                                <img className="d-none logo-day" alt="GenZ" src="/assets/imgs/page/logo/Soff Study dark logo.png" />
+                                <img className="logo-night" alt="GenZ" src="/assets/imgs/page/logo/Nurbek1.svg" />
+                                <img className="d-none logo-day" alt="GenZ" src="/assets/imgs/page/logo/Nurbek1.svg" />
                                 </Link>
-                                <p className="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">Maqsad, aniq! O'quvchilarning natijasiga qaratilgan. O'z ustida ishlab sabr qila oladiganlargina "Soff Study" bilan birgalikda o'z maqsadiga erishadi. Bunga biz ishonamiz va tajribamizdan ham o'tkazdik!|</p>
+                                <p className="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">Maqsad, aniq! O'quvchilarning natijasiga qaratilgan. O'z ustida ishlab sabr qila oladiganlargina "Modern educational centers" bilan birgalikda o'z maqsadiga erishadi. Bunga biz ishonamiz va tajribamizdan ham o'tkazdik!|</p>
                                 <h6 className="color-white mb-5 wow animate__animated animate__fadeInUp">Manzil</h6>
                                 <p className="text-sm color-gray-500 wow animate__animated animate__fadeInUp">8/1 Bunyodkor Avenue, <br/> Tashkent 100115</p>
                             </div>
